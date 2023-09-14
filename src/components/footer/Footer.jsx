@@ -22,7 +22,7 @@ const Footer = () => {
 
 
 
-  const { data, isLoading } = useFetch(
+  const { isLoading } = useFetch(
 
     );
   return (

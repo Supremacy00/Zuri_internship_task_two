@@ -11,8 +11,6 @@ const Hero = () => {
 
   const heroData = data?.slice(0, 5) || [];
 
-  console.log(heroData)
-
   const renderSlides = heroData.map((item) => (
     <div
       key={item.id}

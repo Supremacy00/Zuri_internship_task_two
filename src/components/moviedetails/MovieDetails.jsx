@@ -59,11 +59,6 @@ const MovieDetails = () => {
         });
     }, 1000);
   }, [url]);
-
-console.log("MovieDetails component rendered");
-console.log("ID:", id);
-console.log("Data:", data);
-
  
   if (isLoading) {
     return (

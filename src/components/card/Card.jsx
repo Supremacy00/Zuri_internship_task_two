@@ -18,7 +18,6 @@ const Card = ({ searchResults }) => {
     initialMovieIds.includes(movie.id)
   );
 
-  console.log(slicedData)
 
   const movieList =
     filteredSearchResults.length > 0 ? filteredSearchResults : slicedData;
