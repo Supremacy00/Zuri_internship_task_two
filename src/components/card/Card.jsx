@@ -61,7 +61,7 @@ const Card = ({ searchResults }) => {
                   <div className="flex justify-between items-center">
                     <div className="flex gap-1.5 items-center mt-3">
                       <img
-                        src="/src/assets/imdb.png"
+                        src="/public/images/imdb.png"
                         alt=""
                         className="w-8 h-4"
                       />
@@ -69,7 +69,7 @@ const Card = ({ searchResults }) => {
                     </div>
                     <div className="flex gap-1.5 items-center mt-3">
                       <img
-                        src="/src/assets/rtimg.png"
+                        src="/public/images/rtimg.png"
                         alt=""
                         className="w-4 h-4"
                       />

@@ -30,7 +30,7 @@ const Hero = () => {
           <div className="flex items-center mt-2 gap-[50px]">
                     <div className="flex gap-1.5 items-center mt-3">
                       <img
-                        src="/src/assets/imdb.png"
+                        src="/public/images/imdb.png"
                         alt=""
                         className="w-8 h-4"
                       />
@@ -38,7 +38,7 @@ const Hero = () => {
                     </div>
                     <div className="flex gap-1.5 items-center mt-3">
                       <img
-                        src="/src/assets/rtimg.png"
+                        src="/public/images/rtimg.png"
                         alt=""
                         className="w-4 h-4"
                       />

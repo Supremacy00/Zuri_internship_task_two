@@ -85,7 +85,7 @@ const Navbar = ({ setSearchResults }) => {
           <Link to="/">
             <div className="flex justify-start items-center gap-3 md:gap-5 ">
               <img
-                src="/src/assets/tv.png"
+                src="/public/images/tv.png"
                 alt=""
                 className="w-[45px] h-[45px] md:w-[50px] md:h-[50px] z-50"
               />
@@ -151,9 +151,9 @@ const Navbar = ({ setSearchResults }) => {
               } cursor-pointer md:cursor-default`}
               onClick={handleMenu}
             >
-              <img src="/src/assets/Ellipse 1.png" alt="" className="w-8 h-8" />
+              <img src="/public/images/Ellipse 1.png" alt="" className="w-8 h-8" />
               <span className="absolute top-1 left-1">
-                <img src="/src/assets/Menu alt 4.png" alt="" />
+                <img src="/public/images/Menu alt 4.png" alt="" />
               </span>
             </div>
           </div>
