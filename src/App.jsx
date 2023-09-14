@@ -3,14 +3,15 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/home/Home";
 import { useEffect, useState } from "react"; 
 import FadeLoader from "react-spinners/FadeLoader";
-
+import useFetch from "./components/useFetch";
 
 function App() {
-  const [isLoading, setIsLoading] = useState(true);
+  const { isLoading } = useFetch
+  const [pageIsLoaded, setPageIsLoaded] = useState(false);
 
   useEffect(() => {
     setTimeout(() => {
-      setIsLoading(false); 
+      setPageIsLoaded(true); 
     }, 1500); 
     
   }, []);
@@ -18,7 +19,7 @@ function App() {
   return (
     <BrowserRouter>
       <div>
-        {isLoading ? ( 
+        {isLoading || !pageIsLoaded ? ( 
           <div className="flex justify-center items-center h-screen text-red-700">
             <FadeLoader color="#FF0000" />
           </div>
