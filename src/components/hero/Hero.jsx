@@ -1,5 +1,5 @@
 
-import useFetch from "../useFetch";
+import useFetch from "../hooks/UseFetch";
 import { Carousel } from "react-responsive-carousel";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import PlayCircleOutlineIcon from '@mui/icons-material/PlayCircleOutline';

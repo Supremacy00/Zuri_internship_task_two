@@ -1,7 +1,7 @@
 
 import ChevronRightIcon from "@mui/icons-material/ChevronRight";
 import FavoriteIcon from "@mui/icons-material/Favorite";
-import useFetch from "../useFetch";
+import useFetch from "../hooks/UseFetch";
 import { Link } from "react-router-dom";
 
 import PropTypes from "prop-types";

@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Home from "./components/home/Home";
 import { useEffect, useState } from "react"; 
 import FadeLoader from "react-spinners/FadeLoader";
-import useFetch from "./components/useFetch";
+import useFetch from "./components/hooks/UseFetch";
 
 function App() {
   const { isLoading } = useFetch
