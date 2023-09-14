@@ -1,15 +1,15 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import Navbar from "../navbar/Navbar";
 import Hero from "../hero/Hero";
 import Card from "../card/Card";
 import Footer from "../footer/Footer";
 
 const Home = () => {
-  const [searchResults, setSearchResults] = useState([]); // Define state for search results
+  const [searchResults, setSearchResults] = useState([]);
 
   return (
     <div>
-      <Navbar setSearchResults={setSearchResults} /> {/* Pass search results as prop */}
+      <Navbar setSearchResults={setSearchResults} />
       <Hero />
       <Card searchResults={searchResults} />
       <Footer />
