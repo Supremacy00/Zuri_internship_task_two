@@ -79,17 +79,17 @@ const Navbar = ({ setSearchResults }) => {
           className={`${
             !isOpen
               ? "container mx-auto flex justify-between mt-4 px-8 sm:max-w-[1200px] lg:max-w-[1285px] xl:px-0"
-              : "mt-4 px-3"
-          } absolute right-0 left-0 top-0 z-50 `}
+              : "mt-4 px-8"
+          } fixed md:absolute right-0 left-0 top-0 z-50 ${isScrolled && !isOpen && "bg-black bg-opacity-80 mt-0 py-2"} `}
         >
           <Link to="/">
-            <div className="flex justify-start items-center gap-3 md:gap-5">
+            <div className="flex justify-start items-center gap-3 md:gap-5 ">
               <img
                 src="/src/assets/tv.png"
                 alt=""
-                className="w-[45px] h-[45px] md:w-[50px] md:h-[50px]"
+                className="w-[45px] h-[45px] md:w-[50px] md:h-[50px] z-50"
               />
-              <h1 className="text-[18px] md:font-semibold md:text-[25px] text-white">
+              <h1 className="text-[18px] z-50 md:font-semibold md:text-[25px] text-white">
                 MovieBox
               </h1>
             </div>
@@ -97,9 +97,9 @@ const Navbar = ({ setSearchResults }) => {
           <div
             className={`${
               !isOpen
-                ? "relative hidden md:flex md:items-center "
+                ? "fixed md:relative hidden md:flex md:items-center "
                 : isOpen
-                ? "absolute top-[62px] left-0 right-0 bg-red-800 w-full h-[280px]"
+                ? "fixed md:relative top-0 left-0 right-0 bg-red-800 w-full h-[350px]"
                 : "hidden"
             }`}
           >
@@ -109,7 +109,7 @@ const Navbar = ({ setSearchResults }) => {
               id=""
               className={`${
                 isOpen
-                  ? "rounded-md absolute top-12 right-20 left-20 h-10 md:h-8"
+                  ? "rounded-md absolute top-28 right-8 left-8 md:right-20 md:left-20 h-10 md:h-8"
                   : "border w-[400px] h-10 rounded-md"
               } pl-3 pr-8 text-black md:text-white  md:bg-transparent `}
               placeholder="What do you want to watch?"
@@ -119,7 +119,7 @@ const Navbar = ({ setSearchResults }) => {
             />
             <span
               className={`${
-                isOpen ? "absolute top-[55px] right-[90px]" : "relative right-8"
+                isOpen ? "absolute top-[120px] right-[45px]" : "relative right-8"
               } `}
             >
               {isLoading ? (
@@ -147,7 +147,7 @@ const Navbar = ({ setSearchResults }) => {
             </h1>
             <div
               className={`${
-                isOpen ? "absolute top-[6.5px] right-3" : "relative "
+                isOpen ? "absolute top-[6.5px] right-8" : "relative "
               } cursor-pointer md:cursor-default`}
               onClick={handleMenu}
             >

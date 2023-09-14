@@ -43,7 +43,7 @@ const Card = ({ searchResults }) => {
                   <img
                     src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                     alt=""
-                    className="object-fill w-[1500px] h-[400px] md:h-[350px] hover:-translate-y-2 hover:transition-all hover:ease-in hover:delay-150 cursor-pointer"
+                    className="object-fill w-[1500px] h-[500px] md:h-[350px] hover:-translate-y-2 hover:transition-all hover:ease-in hover:delay-150 cursor-pointer"
                   />
                 </Link>
                 <div className="absolute top-4 right-4 text-white text-xs bg-gray-100 bg-opacity-70 rounded-full">
@@ -51,7 +51,7 @@ const Card = ({ searchResults }) => {
                 </div>
               </div>
               <div>
-                <div className="mt-3 text-xs text-gray-400">
+                <div className="mt-3 text-[14px] text-gray-600">
                   <h3>{movie.release_date}</h3>
                 </div>
                 <div>
@@ -65,7 +65,7 @@ const Card = ({ searchResults }) => {
                         alt=""
                         className="w-8 h-4"
                       />
-                      <p className="text-[12px]">{movie.data}</p>
+                      <p className="text-[13px]">{movie.popularity}</p>
                     </div>
                     <div className="flex gap-1.5 items-center mt-3">
                       <img
@@ -73,8 +73,8 @@ const Card = ({ searchResults }) => {
                         alt=""
                         className="w-4 h-4"
                       />
-                      <p className="text-[12px]">
-                        {movie.popularity}
+                      <p className="text-[13px]">
+                        {movie.vote_count}
                       </p>
                     </div>
                   </div>

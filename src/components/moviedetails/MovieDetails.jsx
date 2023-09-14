@@ -149,7 +149,7 @@ const MovieDetails = () => {
           </nav>
 
           <section className="my-8 px-6 md:container md:mx-auto md:ml-[250px] lg:px-20">
-            <div className="max-w-full h-[300px] md:h-[350px] rounded-2xl">
+            <div className="max-w-full h-[500px] md:h-[350px] rounded-2xl">
               <img
                 src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
                 alt={data.title}
