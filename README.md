@@ -17,7 +17,6 @@ Welcome to the MovieBox movie discovery app. Users can discover and explore movi
 - Installation
 - Usage
 - Technologies Used
-- Contributing
 
 # Features
 
