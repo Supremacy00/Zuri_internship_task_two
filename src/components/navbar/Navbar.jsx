@@ -86,7 +86,7 @@ const Navbar = ({ setSearchResults }) => {
             !isOpen
               ? "container mx-auto flex justify-between mt-4 px-8 sm:max-w-[1200px] lg:max-w-[1285px] xl:px-0"
               : "mt-4 px-8"
-          } fixed md:absolute right-0 left-0 top-0 z-50 ${isScrolled && !isOpen && "bg-black bg-opacity-80 py-2 -mt-2 "} `}
+          }  md:absolute fixed right-0 left-0 top-0 z-50 ${isScrolled && "fixed bg-black -mb-0 py-2 bg-opacity-80 right-0 left-0 -top-[17px] z-50" } ` }
         >
           <Link to="/">
             <div className="flex justify-start items-center gap-3 md:gap-5 ">
@@ -129,7 +129,7 @@ const Navbar = ({ setSearchResults }) => {
               } `}
             >
               {isLoading ? (
-                <FadeLoader fontSize="inherit" color="#ffffff"/>
+                <FadeLoader color="#ffffff" radius={2} height={10} width={3} margin="5px"/>
               ) : (
                 <SearchIcon className="text-xs text-black md:text-white" />
               )}
