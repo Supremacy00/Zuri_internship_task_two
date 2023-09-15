@@ -40,7 +40,7 @@ const Card = ({ searchResults }) => {
 
   return (
     <div>
-      <section className="container mx-auto font-robotom mt-[70px] px-8 sm:max-w-[1200px] md:mt-32 xl:px-0 lg:max-w-[1285px]">
+      <section className="container mx-auto font-robotom mt-[90px] px-8 sm:max-w-[1200px] md:mt-32 xl:px-0 lg:max-w-[1285px]">
         {!isLoading && (
           <div className="flex justify-between items-center sm:max-w-[1200px] md:mt-16 md:px-0 lg:max-w-[1285px]">
             <h1 className="text-[20px] font-semibold md:text-[25px]">
