@@ -16,7 +16,7 @@ const Hero = () => {
       key={item.id}
       className="text-white relative"
     >
-      <div className="max-w-full h-[630px] md:h-[630px]">
+      <div className="max-w-full ma-h-[630px] md:h-[630px]">
         <img
           src={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
           alt=""
@@ -25,7 +25,7 @@ const Hero = () => {
       </div>
       <div className="max-w-[450px] text-left  mx-8 absolute top-[150px] md:top-[180px] xl:mx-28">
         <div>
-          <h1 className="text-[24px] w-[280px] md:text-[40px] md:w-[500px] md:font-medium">{item.title}</h1>
+          <h1 className="text-[24px] w-[280px] sm:text-[40px] md:w-[500px] sm:font-medium">{item.title}</h1>
           <div>
           <div className="flex items-center mt-2 gap-[50px]">
                     <div className="flex gap-1.5 items-center mt-3">
@@ -48,9 +48,9 @@ const Hero = () => {
                     </div>
                   </div>
           </div>
-          <p className="mt-4 leading-7 md:text-[18px] md:mt-6">{item.overview}</p>
+          <p className="mt-4 leading-7 sm:text-[18px] sm:mt-6">{item.overview}</p>
         </div>
-        <button className="flex items-center mt-[45px] bg-red-700 rounded-lg p-[10px] px-4 text-[14px] uppercase md:text-[15px] md:px-4">
+        <button className="flex items-center mt-[45px] bg-red-700 rounded-lg p-[10px] px-4 text-[14px] uppercase sm:text-[15px] sm:px-4">
           <PlayCircleOutlineIcon />
           <span className="ml-2">Watch Trailer</span>
         </button>
@@ -62,7 +62,7 @@ const Hero = () => {
     <div>
       <Carousel
         showArrows={false}
-        autoPlay={true}
+        autoPlay={false}
         infiniteLoop={true}
         showThumbs={false}
         interval={5000}

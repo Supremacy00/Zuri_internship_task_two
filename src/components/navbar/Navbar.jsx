@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import { useCallback } from "react";
 import FadeLoader from "react-spinners/FadeLoader";
 import PropTypes from "prop-types";
-import { HiMenuAlt4 } from "react-icons/hi"
+import { HiMenuAlt4 } from "react-icons/hi";
 import { IoEllipse } from "react-icons/io5";
 
 const Navbar = ({ setSearchResults }) => {
@@ -84,9 +84,13 @@ const Navbar = ({ setSearchResults }) => {
         <nav
           className={`${
             !isOpen
-              ? "container mx-auto flex justify-between mt-4 px-8 sm:max-w-[1200px] lg:max-w-[1285px] xl:px-0"
-              : "mt-4 px-8"
-          }  md:absolute fixed right-0 left-0 top-0 z-50 ${isScrolled && "fixed bg-black -mb-0 py-2 bg-opacity-80 right-0 left-0 -top-[17px] z-50" } ` }
+              ? "container mx-auto flex justify-between my-4 px-8 sm:max-w-[1200px] lg:max-w-[1285px] xl:px-0"
+              : "my-4 px-8"
+          }  md:absolute fixed right-0 left-0 top-0 z-50 ${
+            isScrolled
+              ? " bg-black bg-opacity-80 md:bg-opacity-0 mt-0 py-2 md:mt-2 "
+              : ""
+          } `}
         >
           <Link to="/">
             <div className="flex justify-start items-center gap-3 md:gap-5 ">
@@ -95,7 +99,7 @@ const Navbar = ({ setSearchResults }) => {
                 alt=""
                 className="w-[45px] h-[45px] md:w-[50px] md:h-[50px] z-50"
               />
-              <h1 className="text-[18px] z-50 md:font-semibold md:text-[25px] text-white">
+              <h1 className="text-[18px] z-50 md:font-semibold  md:text-[20px] lg:text-[25px] text-white">
                 MovieBox
               </h1>
             </div>
@@ -117,21 +121,33 @@ const Navbar = ({ setSearchResults }) => {
                 isOpen
                   ? "rounded-md absolute top-28 right-8 left-8 md:right-20 md:left-20 h-10 md:h-8"
                   : "border w-[400px] h-10 rounded-md"
-              } pl-3 pr-8 text-black md:text-white  md:bg-transparent `}
+              } pl-3 pr-8 text-black md:text-white md:bg-transparent appearance-none focus:outline-none md:w-[350px] lg:w-[400px] `}
               placeholder="What do you want to watch?"
+              style={{ 'appearance': 'textfield' }}
               onChange={(e) => setSearch(e.target.value)}
               value={search}
               onKeyDown={handleSearchMovie}
             />
             <span
               className={`${
-                isOpen ? "absolute top-[120px] right-[45px]" : "relative right-8"
+                isOpen
+                  ? "absolute top-[128px] right-[35px] "
+                  : "relative right-8 md:top-[9px] md:right-6"
               } `}
             >
               {isLoading ? (
-                <FadeLoader color="#ffffff" radius={2} height={10} width={3} margin="5px"/>
+                <div>
+                  <FadeLoader
+                    color="#525252"
+                    cssOverride={{}}
+                    height={8}
+                    margin={-9}
+                    radius={2}
+                    width={2}
+                  />
+                </div>
               ) : (
-                <SearchIcon className="text-xs text-black md:text-white" />
+                <SearchIcon className="text-xs text-black md:text-white absolute right-4 -top-2 md:relative -md:top-2 md:right-2" />
               )}
             </span>
           </div>
@@ -154,12 +170,14 @@ const Navbar = ({ setSearchResults }) => {
             <div
               className={`${
                 isOpen ? "absolute top-[4.5px] right-8 " : "relative"
-              } cursor-pointer md:cursor-default`}
+              } cursor-pointer md:cursor-default ${
+                isScrolled && "mt-0 md:mt-0" && isOpen && "mt-2"
+              }`}
               onClick={handleMenu}
             >
-              <HiMenuAlt4 className="absolute top-[6px] left-[10px] w-6 h-6 text-white z-10"/>
+              <HiMenuAlt4 className="absolute top-[6px] left-[10px] w-6 h-6 text-white z-10" />
               <span className="relative top-0 left-1 ">
-                <IoEllipse className="text-red-700 h-9 w-9"/>
+                <IoEllipse className="text-red-700 h-9 w-9" />
               </span>
             </div>
           </div>
