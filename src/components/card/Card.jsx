@@ -32,7 +32,7 @@ const Card = ({ searchResults }) => {
 
   return (
     <div>
-      <section className="container mx-auto font-robotom mt-[70px] px-8 sm:max-w-[1200px] md:mt-24 xl:px-0 lg:max-w-[1285px]">
+      <section className="container mx-auto font-robotom mt-[70px] px-8 sm:max-w-[1200px] md:mt-32 xl:px-0 lg:max-w-[1285px]">
         {!isLoading && (
           <div className="flex justify-between items-center sm:max-w-[1200px] md:mt-16 md:px-0 lg:max-w-[1285px]">
             <h1 className="text-[20px] font-semibold md:text-[25px]">
@@ -43,7 +43,7 @@ const Card = ({ searchResults }) => {
             </button>
           </div>
         )}
-        <section className="mx-auto grid gap-20 mt-8 sm:grid-cols-2 md:mt-8 md:gap-x-10  xl:gap-x-28 md:px-0 md:grid-cols-3 lg:grid-cols-4">
+        <section className="mx-auto grid gap-20 mt-8 sm:grid-cols-2 md:mt-16 md:gap-x-10  xl:gap-x-28 md:px-0 md:grid-cols-3 lg:grid-cols-4">
           {movieList.map((movie) => (
             <div
               key={movie.id}
@@ -60,7 +60,7 @@ const Card = ({ searchResults }) => {
                   />
                 </Link>
                 <div
-                  className="top-6 right-8 absolute cursor-pointer md:cursor-default"
+                  className="top-6 right-8 absolute cursor-pointer "
                   onClick={() => handleLike(movie.id)}
                 >
                   <IoEllipse className="text-white w-9 h-9 opacity-60 " />

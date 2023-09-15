@@ -4,6 +4,8 @@ import { Link } from "react-router-dom";
 import { useCallback } from "react";
 import FadeLoader from "react-spinners/FadeLoader";
 import PropTypes from "prop-types";
+import { HiMenuAlt4 } from "react-icons/hi"
+import { IoEllipse } from "react-icons/io5";
 
 const Navbar = ({ setSearchResults }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -84,7 +86,7 @@ const Navbar = ({ setSearchResults }) => {
             !isOpen
               ? "container mx-auto flex justify-between mt-4 px-8 sm:max-w-[1200px] lg:max-w-[1285px] xl:px-0"
               : "mt-4 px-8"
-          } fixed md:absolute right-0 left-0 top-0 z-50 ${isScrolled && !isOpen && "bg-black bg-opacity-80 py-2 -mt-0 "} `}
+          } fixed md:absolute right-0 left-0 top-0 z-50 ${isScrolled && !isOpen && "bg-black bg-opacity-80 py-2 -mt-2 "} `}
         >
           <Link to="/">
             <div className="flex justify-start items-center gap-3 md:gap-5 ">
@@ -151,13 +153,13 @@ const Navbar = ({ setSearchResults }) => {
             </h1>
             <div
               className={`${
-                isOpen ? "absolute top-[6.5px] right-8" : "relative "
+                isOpen ? "absolute top-[4.5px] right-8 " : "relative"
               } cursor-pointer md:cursor-default`}
               onClick={handleMenu}
             >
-              <img src="/images/Ellipse 1.png" alt="" className="w-8 h-8" />
-              <span className="absolute top-1 left-1">
-                <img src="/images/Menu alt 4.png" alt="" />
+              <HiMenuAlt4 className="absolute top-[6px] left-[10px] w-6 h-6 text-white z-10"/>
+              <span className="relative top-0 left-1 ">
+                <IoEllipse className="text-red-700 h-9 w-9"/>
               </span>
             </div>
           </div>
