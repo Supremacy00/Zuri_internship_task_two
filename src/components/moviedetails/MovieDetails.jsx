@@ -37,7 +37,7 @@ const MovieDetails = () => {
   const [error, setError] = useState(null);
 
   const { id } = useParams();
-  const url = `https://api.themoviedb.org/3/movie/${id}?api_key=da9f55641078b533ef66073064c85666`
+  const url = `https://api.themoviedb.org/3/movie/${id}?api_key=da9f55641078b533ef66073064c85666`;
 
   useEffect(() => {
     setTimeout(() => {
@@ -59,17 +59,24 @@ const MovieDetails = () => {
         });
     }, 1000);
   }, [url]);
- 
+
+  console.log(data);
+  const runtimeInMinutes = data.runtime;
+
+  const hours = Math.floor(runtimeInMinutes / 60);
+  const minutes = runtimeInMinutes % 60;
+  const movieFormatedTime = `${hours}h ${minutes}m`;
+
   if (isLoading) {
     return (
       <div className="flex justify-center items-center h-screen text-red-700">
-        <FadeLoader color="#FF0000"/>
+        <FadeLoader color="#FF0000" />
       </div>
     );
   }
 
   if (error) {
-    return <div>Error: {error}</div>;
+    return <div className="flex justify-center mt-24">{error}</div>;
   }
 
   if (!data) {
@@ -83,7 +90,7 @@ const MovieDetails = () => {
           <nav className="md:fixed top-0 right-0 left-0 rounded-b-[40px] w-full min-h-24 border-b-2  pb-6 md:w-[250px] md:h-screen md:rounded-r-[40px] md:border-r-2">
             <div className="flex justify-start items-center gap-3 md:gap-7 mt-4 mx-6 md:mt-12 md:ml-8">
               <img
-                src="/src/assets/tv.png"
+                src="/images/tv.png"
                 alt=""
                 className="w-[45px] h-[45px] md:w-[55px] md:h-[55px]"
               />
@@ -149,21 +156,39 @@ const MovieDetails = () => {
           </nav>
 
           <section className="my-8 px-6 md:container md:mx-auto md:ml-[250px] lg:px-20">
-            <div className="max-w-full h-[500px] md:h-[350px] rounded-2xl">
+            <div className="max-w-full h-[500px] md:h-[450px] rounded-2xl">
               <img
                 src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
                 alt={data.title}
                 className="w-full h-full rounded-2xl"
               />
             </div>
-            <div className="mx-auto max-w-[1000px] mt-4 md:mt-6">
-              <ul className="list-disc flex justify-start items-center gap-6 text-[17px] md:text-[19px]">
-                <li className="list-none">{data.title}</li>
-                <li>{data.release_date}</li>
-                <li>{data.vote_count}</li>
-              </ul>
-              <div className="mt-4 md:mt-6 md:text-lg">
-                <p>{data.overview}</p>
+            <div className="mx-auto max-w-[1070px] mt-6 ">
+              <div className="lg:flex items-center gap-3">
+                <ul className="list-disc flex justify-start items-center gap-6 text-[17px] md:text-[19px]">
+                  <li className="list-none" data-testid="movie-title">
+                    {data.title}
+                  </li>
+                  <li data-testid="movie-release-date">{data.release_date}</li>
+                  <li data-testid="movie-runtime">{movieFormatedTime}</li>
+                </ul>
+                <div>
+                  <ul className="flex gap-2 mt-4 lg:mt-0">
+                    {data.genres.map((item) => {
+                      return (
+                        <li
+                          key={item.id}
+                          className="text-red-600 border border-red-50 px-3 py-[2px] rounded-full text-[13px] "
+                        >
+                          {item.name}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </div>
+              </div>
+              <div className="mt-6 md:text-[16px]">
+                <p data-testid="movie-overview">{data.overview}</p>
               </div>
             </div>
           </section>

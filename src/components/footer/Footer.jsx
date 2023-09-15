@@ -45,6 +45,7 @@ const Footer = () => {
           <div className="text-center mt-6 md:mt10 text-gray-500">&copy; 2023 MovieBox by Musa Abdulmuqaddas</div>
         </div>
       </div>
+      <img src="/images/imdb.png" alt="" />
     </footer>
   );
 };

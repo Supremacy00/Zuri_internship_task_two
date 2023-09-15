@@ -37,13 +37,14 @@ const Card = ({ searchResults }) => {
         </div>}
         <section className="mx-auto grid gap-12 mt-8 sm:grid-cols-2 md:mt-8 md:gap-x-10  xl:gap-x-28 md:px-0 md:grid-cols-3 lg:grid-cols-4">
           {movieList.map((movie) => (
-            <div key={movie.id} className="mx-auto mt-6">
+            <div key={movie.id} className="mx-auto mt-6" data-testid="movie-card">
               <div className="relative">
                 <Link to={`moviedetails/${movie.id}`}>
                   <img
                     src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
                     alt=""
                     className="object-fill w-[1500px] h-[500px] md:h-[350px] hover:-translate-y-2 hover:transition-all hover:ease-in hover:delay-150 cursor-pointer"
+                    data-testid="movie-poster"
                   />
                 </Link>
                 <div className="absolute top-4 right-4 text-white text-xs bg-gray-100 bg-opacity-70 rounded-full">
@@ -52,16 +53,16 @@ const Card = ({ searchResults }) => {
               </div>
               <div>
                 <div className="mt-3 text-[14px] text-gray-600">
-                  <h3>{movie.release_date}</h3>
+                  <h3 data-testid="movie-release-date">{movie.release_date}</h3>
                 </div>
                 <div>
-                  <h1 className="mt-3 text-[18px] font-medium">
+                  <h1 className="mt-3 text-[18px] font-medium" data-testid="movie-title">
                     {movie.title}
                   </h1>
                   <div className="flex justify-between items-center">
                     <div className="flex gap-1.5 items-center mt-3">
                       <img
-                        src="/public/images/imdb.png"
+                        src="/images/imdb.png"
                         alt=""
                         className="w-8 h-4"
                       />
@@ -69,7 +70,7 @@ const Card = ({ searchResults }) => {
                     </div>
                     <div className="flex gap-1.5 items-center mt-3">
                       <img
-                        src="/public/images/rtimg.png"
+                        src="/images/rtimg.png"
                         alt=""
                         className="w-4 h-4"
                       />
