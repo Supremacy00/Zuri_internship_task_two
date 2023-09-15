@@ -17,7 +17,7 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter basename="#">
+    <BrowserRouter>
       <div>
         {isLoading || !pageIsLoaded ? ( 
           <div className="flex justify-center items-center h-screen text-red-700">
