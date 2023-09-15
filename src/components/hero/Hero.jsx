@@ -50,7 +50,7 @@ const Hero = () => {
           </div>
           <p className="mt-4 leading-7 sm:text-[18px] sm:mt-6">{item.overview}</p>
         </div>
-        <button className="flex items-center mt-[45px] bg-red-700 rounded-lg p-[10px] px-4 text-[14px] uppercase sm:text-[15px] sm:px-4">
+        <button className="flex items-center mt-[45px] bg-red-700 rounded-lg p-[10px] px-4 text-[14px] uppercase hover:bg-red-800 sm:text-[15px] sm:px-4">
           <PlayCircleOutlineIcon />
           <span className="ml-2">Watch Trailer</span>
         </button>

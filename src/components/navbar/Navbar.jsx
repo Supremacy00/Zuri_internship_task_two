@@ -170,7 +170,7 @@ const Navbar = ({ setSearchResults }) => {
             <div
               className={`${
                 isOpen ? "absolute top-[4.5px] right-8 " : "relative"
-              } cursor-pointer md:cursor-default ${
+              } cursor-pointer  ${
                 isScrolled && "mt-0 md:mt-0" && isOpen && "mt-2"
               }`}
               onClick={handleMenu}
