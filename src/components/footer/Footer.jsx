@@ -27,14 +27,14 @@ const Footer = () => {
     );
   return (
 
-    !isLoading && <footer className="mt-24 mb-12 font-roboto md:mt-36 md:mb-24">
+    !isLoading && <footer className="mt-24 mb-12 font-roboto md:mt-44 md:mb-24">
       <div>
         <div className="flex justify-center items-center gap-8 md:gap-10">
           {socialMediaIcons.map((item) => (
             <div key={item.id} >{item.icon}</div>
           ))}
         </div>
-        <div className="flex justify-center items-center gap-6 mt-6  md:mt-10 md:text-[19px]">
+        <div className="flex justify-center items-center gap-6 mt-6  md:mt-10 md:text-[17px]">
           {footerLinks.map((item) => (
             <div key={item.id}>
               <div>{item.label}</div>
@@ -42,10 +42,10 @@ const Footer = () => {
           ))}
         </div>
         <div>
-          <div className="text-center mt-6 md:mt10 text-gray-500">&copy; 2023 MovieBox by Musa Abdulmuqaddas</div>
+          <div className="text-center mt-6 md:mt10 text-gray-500 md:text-[15px]">&copy; 2023 MovieBox by Musa Abdulmuqaddas</div>
         </div>
       </div>
-      <img src="/images/imdb.png" alt="" />
+     
     </footer>
   );
 };

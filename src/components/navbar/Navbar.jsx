@@ -84,7 +84,7 @@ const Navbar = ({ setSearchResults }) => {
             !isOpen
               ? "container mx-auto flex justify-between mt-4 px-8 sm:max-w-[1200px] lg:max-w-[1285px] xl:px-0"
               : "mt-4 px-8"
-          } fixed md:absolute right-0 left-0 top-0 z-50 ${isScrolled && !isOpen && "bg-black bg-opacity-80 mt-0 py-2"} `}
+          } fixed md:absolute right-0 left-0 top-0 z-50 ${isScrolled && !isOpen && "bg-black bg-opacity-80 py-2 -mt-0 "} `}
         >
           <Link to="/">
             <div className="flex justify-start items-center gap-3 md:gap-5 ">
@@ -103,7 +103,7 @@ const Navbar = ({ setSearchResults }) => {
               !isOpen
                 ? "fixed md:relative hidden md:flex md:items-center "
                 : isOpen
-                ? "fixed md:relative top-0 left-0 right-0 bg-red-800 w-full h-[350px]"
+                ? "fixed md:relative top-0 left-0 right-0 bg-black w-full h-[350px]"
                 : "hidden"
             }`}
           >
