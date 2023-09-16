@@ -7,7 +7,7 @@ import PropTypes from "prop-types";
 import { useState } from "react";
 
 const Card = ({ searchResults }) => {
-  const { data, isLoading , error} = useFetch(
+  const { data, isLoading, error } = useFetch(
     "https://api.themoviedb.org/3/movie/top_rated?api_key=da9f55641078b533ef66073064c85666"
   );
 
@@ -35,7 +35,11 @@ const Card = ({ searchResults }) => {
   }
 
   if (!data) {
-    return <div className="flex justify-center mt-24">The data you are requesting is not available....</div>;
+    return (
+      <div className="flex justify-center mt-24">
+        The data you are requesting is not available....
+      </div>
+    );
   }
 
   return (
@@ -51,7 +55,7 @@ const Card = ({ searchResults }) => {
             </button>
           </div>
         )}
-        <section  data-testid="movie-card" className="mx-auto grid gap-20 mt-8 sm:grid-cols-2 md:mt-16 md:gap-x-10  xl:gap-x-28 md:px-0 md:grid-cols-3 lg:grid-cols-4">
+        <section className="mx-auto grid gap-20 mt-8 sm:grid-cols-2 md:mt-16 md:gap-x-10  xl:gap-x-28 md:px-0 md:grid-cols-3 lg:grid-cols-4">
           {movieList.map((movie) => (
             <div
               key={movie.id}

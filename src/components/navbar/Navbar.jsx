@@ -123,7 +123,7 @@ const Navbar = ({ setSearchResults }) => {
                   : "border w-[400px] h-10 rounded-md"
               } pl-3 pr-8 text-black md:text-white md:bg-transparent appearance-none focus:outline-none md:w-[350px] lg:w-[400px] `}
               placeholder="What do you want to watch?"
-              style={{ 'appearance': 'textfield' }}
+              style={{ appearance: "textfield" }}
               onChange={(e) => setSearch(e.target.value)}
               value={search}
               onKeyDown={handleSearchMovie}
