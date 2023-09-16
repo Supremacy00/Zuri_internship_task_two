@@ -83,6 +83,8 @@ const MovieDetails = () => {
     return <div>The data you are requesting is not available....</div>;
   }
 
+ 
+
   return (
     <div>
       <section>
@@ -156,7 +158,7 @@ const MovieDetails = () => {
           </nav>
 
           <section className="my-8 px-6 md:container md:mx-auto md:ml-[250px] lg:px-20">
-            <div className="max-w-full h-[500px] md:h-[550px] rounded-2xl">
+            <div className="max-w-full h-[500px] md:h-[450px] rounded-2xl">
               <img
                 src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
                 alt={data.title}
@@ -170,8 +172,10 @@ const MovieDetails = () => {
                     {data.title}
                   </li>
                   <div className="flex justify-start items-center gap-4 mt-2 lg:mt-0 lg:gap-8  ">
-                  <li data-testid="movie-release-date">{data.release_date}</li>
-                  <li data-testid="movie-runtime">{movieFormatedTime}</li>
+                    <li data-testid="movie-release-date">
+                      {data.release_date}
+                    </li>
+                    <li data-testid="movie-runtime">{movieFormatedTime}</li>
                   </div>
                 </ul>
                 <div>
