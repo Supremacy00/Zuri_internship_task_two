@@ -28,7 +28,7 @@ const Footer = () => {
               <div key={item.id}>{item.icon}</div>
             ))}
           </div>
-          <div className="flex justify-center items-center gap-6 mt-6  md:mt-10 md:text-[17px]">
+          <div className="flex justify-center items-center text-[15px] mt-6 gap-3  sm:gap-6  sm:mt-10 sm:text-[17px]">
             {footerLinks.map((item) => (
               <div key={item.id}>
                 <div>{item.label}</div>
@@ -36,7 +36,7 @@ const Footer = () => {
             ))}
           </div>
           <div>
-            <div className="text-center mt-6 md:mt10 text-gray-500 md:text-[15px]">
+            <div className="text-center text-gray-500 text-[14px] mt-6 sm:mt10  sm:text-[15px]">
               &copy; 2023 MovieBox by Musa Abdulmuqaddas
             </div>
           </div>
