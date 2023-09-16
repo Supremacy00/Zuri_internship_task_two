@@ -168,10 +168,10 @@ const MovieDetails = () => {
             <div className="mx-auto max-w-[1070px] mt-6 ">
               <div className="lg:flex lg:items-center gap-3">
                 <ul className="text-start lg:flex lg:justify-start lg:items-center lg:gap-6 text-[17px] lg:list-disc lg:text-[19px]">
-                  <li className="list-none" data-testid="movie-title">
+                  <li className="list-none text-[17px]" data-testid="movie-title">
                     {data.title}
                   </li>
-                  <div className="flex justify-start items-center gap-4 mt-2 lg:mt-0 lg:gap-8  ">
+                  <div className="flex justify-start items-center gap-4 mt-2 lg:mt-0 lg:gap-8 text-[17px] ">
                     <li data-testid="movie-release-date">
                       {data.release_date}
                     </li>
