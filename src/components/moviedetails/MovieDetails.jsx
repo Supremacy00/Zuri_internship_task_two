@@ -86,8 +86,6 @@ const MovieDetails = () => {
 
   const officialTrailer = filteredVideo.find((item) => item.official === true);
 
- 
-
   return (
     <div>
       <section>
@@ -162,20 +160,25 @@ const MovieDetails = () => {
 
           <section className="my-8 px-6 md:container md:mx-auto md:ml-[250px] lg:px-16">
             <div className="max-w-full h-[500px] md:h-[450px] rounded-2xl">
-                  {officialTrailer && <iframe
+              {officialTrailer && (
+                <iframe
                   key={officialTrailer.id}
-        width="500"
-        height="315"
-        src={`https://www.youtube.com/embed/${officialTrailer.key}`}
-        frameBorder="0"
-        allowFullScreen
-        className="w-full h-full rounded-2xl "
-    ></iframe>}
+                  width="500"
+                  height="315"
+                  src={`https://www.youtube.com/embed/${officialTrailer.key}`}
+                  frameBorder="0"
+                  allowFullScreen
+                  className="w-full h-full rounded-2xl "
+                ></iframe>
+              )}
             </div>
             <div className="mx-auto max-w-[1120px] mt-6 ">
               <div className="lg:flex lg:items-center gap-3">
                 <ul className="sm:flex sm:justify-start sm:items-center gap-5 sm:list-disc sm:gap-8">
-                  <li className="list-none text-[16px] sm:text-[17px]" data-testid="movie-title">
+                  <li
+                    className="list-none text-[16px] sm:text-[17px]"
+                    data-testid="movie-title"
+                  >
                     {data.title}
                   </li>
                   <div className="flex justify-start items-center text-[16px] gap-5 mt-2 sm:mt-0 sm:gap-8 sm:text-[17px] ">
