@@ -160,11 +160,11 @@ const MovieDetails = () => {
             </div>
           </nav>
 
-          <section className="my-8 px-6 md:container md:mx-auto md:ml-[250px] lg:px-20">
+          <section className="my-8 px-6 md:container md:mx-auto md:ml-[250px] lg:px-16">
             <div className="max-w-full h-[500px] md:h-[450px] rounded-2xl">
                   {officialTrailer && <iframe
                   key={officialTrailer.id}
-        width=""
+        width="500"
         height="315"
         src={`https://www.youtube.com/embed/${officialTrailer.key}`}
         frameBorder="0"
@@ -172,13 +172,13 @@ const MovieDetails = () => {
         className="w-full h-full rounded-2xl "
     ></iframe>}
             </div>
-            <div className="mx-auto max-w-[1070px] mt-6 ">
+            <div className="mx-auto max-w-[1120px] mt-6 ">
               <div className="lg:flex lg:items-center gap-3">
-                <ul className="text-start lg:flex lg:justify-start lg:items-center lg:gap-6 text-[17px] lg:list-disc lg:text-[19px]">
-                  <li className="list-none text-[17px]" data-testid="movie-title">
+                <ul className="sm:flex sm:justify-start sm:items-center gap-5 sm:list-disc sm:gap-8">
+                  <li className="list-none text-[16px] sm:text-[17px]" data-testid="movie-title">
                     {data.title}
                   </li>
-                  <div className="flex justify-start items-center gap-4 mt-2 lg:mt-0 lg:gap-8 text-[17px] ">
+                  <div className="flex justify-start items-center text-[16px] gap-5 mt-2 sm:mt-0 sm:gap-8 sm:text-[17px] ">
                     <li data-testid="movie-release-date">
                       {data.release_date}
                     </li>
@@ -200,7 +200,7 @@ const MovieDetails = () => {
                   </ul>
                 </div>
               </div>
-              <div className="mt-6 md:text-[16px]">
+              <div className="mt-6 text-[15px] sm:text-[16px]">
                 <p data-testid="movie-overview">{data.overview}</p>
               </div>
             </div>
