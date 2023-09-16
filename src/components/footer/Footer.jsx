@@ -28,7 +28,7 @@ const Footer = () => {
               <div key={item.id}>{item.icon}</div>
             ))}
           </div>
-          <div className="text-center ss:flex ss:justify-center ss:items-center ss:gap-6 mt-6  md:mt-10 md:text-[17px]">
+          <div className="flex justify-center items-center gap-6 mt-6  md:mt-10 md:text-[17px]">
             {footerLinks.map((item) => (
               <div key={item.id}>
                 <div>{item.label}</div>
