@@ -37,7 +37,7 @@ const MovieDetails = () => {
   const [error, setError] = useState(null);
 
   const { id } = useParams();
-  const url = `https://api.themoviedb.org/3/movie/${id}?api_key=da9f55641078b533ef66073064c85666`;
+  const url = `https://api.themoviedb.org/3/movie/${id}?api_key=da9f55641078b533ef66073064c85666&append_to_response=videos`;
 
   useEffect(() => {
     setTimeout(() => {
@@ -60,7 +60,6 @@ const MovieDetails = () => {
     }, 1000);
   }, [url]);
 
-  console.log(data);
   const runtimeInMinutes = data.runtime;
 
   const hours = Math.floor(runtimeInMinutes / 60);
@@ -82,6 +81,10 @@ const MovieDetails = () => {
   if (!data) {
     return <div>The data you are requesting is not available....</div>;
   }
+
+  const filteredVideo = data.videos.results;
+
+  const officialTrailer = filteredVideo.find((item) => item.official === true);
 
  
 
@@ -159,11 +162,15 @@ const MovieDetails = () => {
 
           <section className="my-8 px-6 md:container md:mx-auto md:ml-[250px] lg:px-20">
             <div className="max-w-full h-[500px] md:h-[450px] rounded-2xl">
-              <img
-                src={`https://image.tmdb.org/t/p/w500${data.poster_path}`}
-                alt={data.title}
-                className="w-full h-full rounded-2xl"
-              />
+                  {officialTrailer && <iframe
+                  key={officialTrailer.id}
+        width=""
+        height="315"
+        src={`https://www.youtube.com/embed/${officialTrailer.key}`}
+        frameBorder="0"
+        allowFullScreen
+        className="w-full h-full rounded-2xl "
+    ></iframe>}
             </div>
             <div className="mx-auto max-w-[1070px] mt-6 ">
               <div className="lg:flex lg:items-center gap-3">
