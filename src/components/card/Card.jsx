@@ -51,7 +51,7 @@ const Card = ({ searchResults }) => {
             </button>
           </div>
         )}
-        <section className="mx-auto grid gap-20 mt-8 sm:grid-cols-2 md:mt-16 md:gap-x-10  xl:gap-x-28 md:px-0 md:grid-cols-3 lg:grid-cols-4">
+        <section  data-testid="movie-card" className="mx-auto grid gap-20 mt-8 sm:grid-cols-2 md:mt-16 md:gap-x-10  xl:gap-x-28 md:px-0 md:grid-cols-3 lg:grid-cols-4">
           {movieList.map((movie) => (
             <div
               key={movie.id}
